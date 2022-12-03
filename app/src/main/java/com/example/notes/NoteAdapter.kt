@@ -1,4 +1,5 @@
 package com.example.notes
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -15,7 +16,10 @@ class NoteAdapter: RecyclerView.Adapter<NoteAdapter.ItemViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        TODO("Not yet implemented")
+        val itemLayout = LayoutInflater.from(parent.context)
+            .inflate(R.layout.note_item, parent, false)
+
+        return ItemViewHolder(itemLayout)
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
