@@ -7,10 +7,11 @@ import androidx.cardview.widget.CardView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.notes.data.Repository
+import com.example.notes.data.model.Note
 import com.example.notes.ui.main.MainFragmentDirections
 
 class NoteAdapter: RecyclerView.Adapter<NoteAdapter.ItemViewHolder>() {
-    val dataset = Repository().loadNotes()
+    var dataset = Repository().loadNotes()
 
     inner class ItemViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val title: TextView = itemView.findViewById(R.id.note_title)
@@ -37,8 +38,12 @@ class NoteAdapter: RecyclerView.Adapter<NoteAdapter.ItemViewHolder>() {
 
     }
 
-
     override fun getItemCount(): Int {
        return dataset.size
+    }
+
+    fun submitList(newList: MutableList<Note>) {
+        dataset = newList
+        notifyDataSetChanged()
     }
 }

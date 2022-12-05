@@ -6,13 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import com.example.notes.NoteAdapter
 import com.example.notes.R
 import com.example.notes.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
 
-    private lateinit var viewModel: MainViewModel
+    private val viewModel: MainViewModel by activityViewModels()
     private lateinit var binding: FragmentMainBinding
 
     override fun onCreateView(
@@ -28,6 +29,10 @@ class MainFragment : Fragment() {
 
         val noteAdapter = NoteAdapter()
         binding.noteRecycler.adapter = noteAdapter
+
+        viewModel.notes.observe(viewLifecycleOwner) {
+            noteAdapter.submitList(it)
+        }
     }
 
 }
