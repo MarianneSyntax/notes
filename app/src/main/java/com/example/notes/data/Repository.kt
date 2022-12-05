@@ -1,16 +1,15 @@
 package com.example.notes.data
 
 import com.example.notes.data.model.Note
-import java.util.*
 
 class Repository {
 
     fun loadNotes(): MutableList<Note> {
         return mutableListOf<Note>(
-            Note("Einkaufsliste", "Tomaten, Ingwer, Orangen, Zitronen, Reis, Kartoffeln", Date(2022,12,1), Date(2022,12,2)),
-            Note("To Do", "Lernen, Putzen, Kochen, Sport, Gassi gehen, Hund füttern", Date(2022,12,1), Date(2022,12,2)),
-            Note("Boy Baby Names", "Angelo, Vincent, Timothy, Simon, David, Max, Joaquin", Date(2022,12,1), Date(2022,12,2)),
-            Note("Girl Baby Names", "Carla, Gina, Gigi, Gia", Date(2022,12,1), Date(2022,12,2)),
+            Note("Einkaufsliste", "Tomaten, Ingwer, Orangen, Zitronen, Reis, Kartoffeln", "01.12.22", "02.12.22"),
+            Note("To Do", "Lernen, Putzen, Kochen, Sport, Gassi gehen, Hund füttern", "01.12.22", "02.12.22"),
+            Note("Boy Baby Names","Tom, Simon, George, Fred", "29.11.22","30.11.22"),
+            Note("Girl Baby Names", "Carla, Gina, Gigi, Gia", "01.12.22", "02.12.22"),
         )
     }
 }

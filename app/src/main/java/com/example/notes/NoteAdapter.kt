@@ -28,9 +28,8 @@ class NoteAdapter: RecyclerView.Adapter<NoteAdapter.ItemViewHolder>() {
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.title.text = dataset[position].title
         holder.body.text = dataset[position].body
-        holder.dateCreated.text = dataset[position].dateCreated.toString()
-        holder.dateEdited.text = dataset[position].dateEdited.toString()
-
+        holder.dateCreated.text = dataset[position].dateCreated
+        holder.dateEdited.text = dataset[position].dateEdited
         holder.noteCard.setOnClickListener {
             //TODO: implementieren
         }

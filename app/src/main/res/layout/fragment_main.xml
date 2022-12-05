@@ -16,13 +16,15 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/noteRecycler"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.945"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintVertical_bias="0.0"
             tools:listitem="@layout/note_item" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
