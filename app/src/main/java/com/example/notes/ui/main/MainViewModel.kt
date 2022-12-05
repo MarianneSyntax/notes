@@ -29,8 +29,10 @@ class MainViewModel : ViewModel() {
 
     }
 
-    fun newNote(){
-
+    fun newNote(title: String, body: String){
+        val new = Note(title,body)
+        _notes.value?.add(0,new)
+        position = 0
     }
 
     fun deleteNote(){
