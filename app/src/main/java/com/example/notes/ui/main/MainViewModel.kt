@@ -18,7 +18,14 @@ class MainViewModel : ViewModel() {
     val notes: LiveData<MutableList<Note>>
         get() = _notes
 
-    fun updateNote(){
+    fun updateNote(noteToUpdate: Note, newTitle: String, newBody: String){
+        noteToUpdate.title = newTitle
+        noteToUpdate.body = newBody
+
+        val noteToUpdateIndex = notes.value?.indexOf(noteToUpdate)
+        if (noteToUpdateIndex != null){
+            position = noteToUpdateIndex
+        }
 
     }
 
