@@ -38,6 +38,19 @@ class NoteFragment : Fragment() {
             }
         }
 
+        binding.noteSaveButton.setOnClickListener {
+            val newTitle = binding.noteTitleEdit.text.toString()
+            val newBody = binding.noteBodyEdit.text.toString()
+
+            if (newTitle != "" && newBody != ""){
+                if (::shownNote.isInitialized){
+                    viewModel.updateNote(shownNote,newTitle,newBody)
+                } else {
+                    viewModel.newNote(newTitle,newBody)
+                }
+            }
+        }
+
 
 
 
