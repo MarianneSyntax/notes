@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.notes.NoteAdapter
 import com.example.notes.R
 import com.example.notes.databinding.FragmentMainBinding
@@ -32,6 +33,10 @@ class MainFragment : Fragment() {
 
         viewModel.notes.observe(viewLifecycleOwner) {
             noteAdapter.submitList(it)
+        }
+
+        binding.addNoteBtn.setOnClickListener {
+            findNavController().navigate(MainFragmentDirections.actionMainFragmentToNoteFragment(-1))
         }
     }
 
