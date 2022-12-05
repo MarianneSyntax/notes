@@ -9,5 +9,17 @@
         android:id="@+id/mainFragment"
         android:name="com.example.notes.ui.main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.example.notes.NoteFragment"
+        android:label="NoteFragment" >
+        <argument
+            android:name="noteIndex"
+            app:argType="integer" />
+    </fragment>
 </navigation>
