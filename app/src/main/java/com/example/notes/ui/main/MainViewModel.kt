@@ -17,4 +17,16 @@ class MainViewModel : ViewModel() {
     // 4. Variable von _notes abhängig machen, die im Rest der App angesprochen wird und von dort aus nicht überschrieben werden kann
     val notes: LiveData<MutableList<Note>>
         get() = _notes
+
+    fun updateNote(){
+
+    }
+
+    fun newNote(){
+
+    }
+
+    fun deleteNote(){
+
+    }
 }
