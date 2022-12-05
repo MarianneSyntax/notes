@@ -27,6 +27,9 @@ class NoteFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val noteIndex = requireArguments().get("noteIndex")
+
+
 
     }
 
