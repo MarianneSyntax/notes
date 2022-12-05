@@ -15,7 +15,7 @@ import com.example.notes.ui.main.MainViewModel
 
 class NoteFragment : Fragment() {
 
-    private lateinit var viewModel: MainViewModel
+    private val viewModel: MainViewModel by activityViewModels()
     private lateinit var binding: FragmentNoteBinding
 
     private lateinit var shownNote: Note
