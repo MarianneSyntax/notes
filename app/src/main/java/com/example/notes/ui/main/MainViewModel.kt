@@ -35,7 +35,17 @@ class MainViewModel : ViewModel() {
         position = 0
     }
 
-    fun deleteNote(){
+    fun deleteNote(note: Note){
+        val noteIndex = notes.value?.indexOf(note)
+
+        if (noteIndex != null && noteIndex > 0){
+            position = noteIndex-1
+        } else{
+            position = 0
+        }
+
+        _notes.value?.remove(note)
+        _notes.value = notes.value
 
     }
 }
