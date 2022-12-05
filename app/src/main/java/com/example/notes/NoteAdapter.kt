@@ -39,6 +39,6 @@ class NoteAdapter: RecyclerView.Adapter<NoteAdapter.ItemViewHolder>() {
 
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+       return dataset.size
     }
 }
