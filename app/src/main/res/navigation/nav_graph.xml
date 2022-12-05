@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/noteFragment"
-        android:name="com.example.notes.NoteFragment"
+        android:name="com.example.notes.ui.main.NoteFragment"
         android:label="NoteFragment" >
         <argument
             android:name="noteIndex"
